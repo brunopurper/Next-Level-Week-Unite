@@ -22,6 +22,7 @@ export function AttendeeList() {
 
     function onSearchInputChanged(event: ChangeEvent<HTMLInputElement>) {
         setSearch(event.target.value)
+        setPage(1)
     }
 
     function goToNextPage(){
@@ -91,7 +92,7 @@ export function AttendeeList() {
             </tbody>
             <tfoot>
                 <tr>
-                    <TableCel colSpan={3}>Mostrando 10 de 228 itens</TableCel>
+                    <TableCel colSpan={3}>Mostrando {page * 10} de {attendees.length} itens</TableCel>
 
                     <TableCel className="text-right" colSpan={3}>
                         <div className="inline-flex items-center gap-8">
